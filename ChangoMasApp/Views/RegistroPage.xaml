@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ChangoMasApp.ViewModels"
+             x:Class="ChangoMasApp.Views.RegistroPage"
+             Title="Registro"
+             BackgroundColor="#F0F4F8">
+
+    <ContentPage.BindingContext>
+        <vm:RegistroViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="FillAndExpand">
+
+            <Label Text="Registrarse" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Start"
+                   TextColor="#FF0000"
+                   Margin="0,20,0,10"/>
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="10"
+                   HasShadow="True"
+                   Padding="15">
+
+                <VerticalStackLayout Spacing="15">
+                    <StackLayout>
+                        <Label Text="Nombre completo" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Entry Text="{Binding NombreCompleto}" 
+                                   Placeholder="Ingrese su nombre completo"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#333"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Email" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Entry Text="{Binding Email}" 
+                                   Placeholder="Ingrese su email"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#333"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Contraseña" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Entry Text="{Binding Contraseña}" 
+                                   Placeholder="Ingrese su contraseña"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   IsPassword="True"
+                                   TextColor="#333"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Provincia" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Entry Text="{Binding Provincia}" 
+                                   Placeholder="Ingrese su provincia"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#333"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Ciudad" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Entry Text="{Binding Ciudad}" 
+                                   Placeholder="Ingrese su ciudad"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#333"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Calle" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Entry Text="{Binding Calle}" 
+                                   Placeholder="Ingrese su calle"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#333"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Código Postal" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Entry Text="{Binding CodigoPostal}" 
+                                   Placeholder="Ingrese su código postal"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#333"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Número de calle" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Entry Text="{Binding NumeroCalle}" 
+                                   Placeholder="Ingrese su número de calle"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#333"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Departamento" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Entry Text="{Binding Departamento}" 
+                                   Placeholder="Ingrese su departamento"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#333"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <Button Text="Registrarse"
+                            Command="{Binding RegistroCommand}"
+                            FontSize="16"
+                            HeightRequest="50"
+                            BackgroundColor="#FF0000"
+                            TextColor="White"
+                            CornerRadius="10"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="End"
+                            Margin="0,10,0,0"/>
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

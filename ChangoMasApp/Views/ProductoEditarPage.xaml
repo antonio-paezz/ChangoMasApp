@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChangoMasApp.Views.ProductoEditarPage"
+             xmlns:vm="clr-namespace:ChangoMasApp.ViewModels"
+             x:DataType="vm:ProductoEditarViewModel"
+             BackgroundColor="#4CAF50"
+             Title="Editar Producto">
+
+    <ScrollView>
+        <Grid Padding="20" RowDefinitions="Auto,Auto,*" VerticalOptions="FillAndExpand">
+
+            <Label Text="Editar Producto"
+                   FontSize="24"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   VerticalOptions="StartAndExpand"
+                   TextColor="#FF0000"
+                   Margin="0,40,0,20"
+                   Grid.Row="0" />
+
+            <StackLayout Spacing="20" Grid.Row="1">
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Nombre de producto"
+                           FontSize="14"
+                           TextColor="#FFCC00" />
+                    <Frame BackgroundColor="#FFF"
+                           CornerRadius="10"
+                           Padding="0"
+                           HasShadow="False"
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Producto.NombreProducto, Mode=TwoWay}"
+                               Placeholder="Ingrese el nombre"
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" />
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Descripción"
+                           FontSize="14"
+                           TextColor="#FFCC00" />
+                    <Frame BackgroundColor="#FFF"
+                           CornerRadius="10"
+                           Padding="0"
+                           HasShadow="False"
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Producto.Descripcion, Mode=TwoWay}"
+                               Placeholder="Ingrese la descripción"
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" />
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Stock"
+                           FontSize="14"
+                           TextColor="#FFCC00" />
+                    <Frame BackgroundColor="#FFF"
+                           CornerRadius="10"
+                           Padding="0"
+                           HasShadow="False"
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Producto.Stock, Mode=TwoWay}"
+                               Placeholder="Ingrese el stock"
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" />
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Precio"
+                           FontSize="14"
+                           TextColor="#FFCC00" />
+                    <Frame BackgroundColor="#FFF"
+                           CornerRadius="10"
+                           Padding="0"
+                           HasShadow="False"
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Producto.Precio, Mode=TwoWay}"
+                               Placeholder="Ingrese el precio"
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" />
+                    </Frame>
+                </StackLayout>
+
+                <Button Text="Guardar"
+                        Command="{Binding EditarCommand}"
+                        FontSize="16"
+                        HeightRequest="50"
+                        BackgroundColor="#007ACC"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="End"
+                        Margin="0,10,0,0" />
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

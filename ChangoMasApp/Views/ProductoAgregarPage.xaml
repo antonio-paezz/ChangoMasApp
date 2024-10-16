@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ChangoMasApp.ViewModels"
+             x:Class="ChangoMasApp.Views.ProductoAgregarPage"
+             Title="Agregar Producto"
+             BackgroundColor="#F0F4F8">
+
+    <ContentPage.BindingContext>
+        <vm:ProductoAgregarViewModel />
+    </ContentPage.BindingContext>
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="20" VerticalOptions="FillAndExpand">
+
+            <Label Text="Agregar Producto" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="Start"
+                   TextColor="#FF0000"
+                   Margin="0,20,0,10"/>
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="10"
+                   HasShadow="True"
+                   Padding="15">
+                <VerticalStackLayout Spacing="15">
+
+                    <StackLayout>
+                        <Label Text="Nombre del Producto" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Entry Text="{Binding NombreProducto}" 
+                                   Placeholder="Ingrese el nombre del producto"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#333"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Descripción" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Editor Text="{Binding Descripcion}" 
+                                    Placeholder="Ingrese la descripción"
+                                    FontSize="16"
+                                    BackgroundColor="Transparent"
+                                    TextColor="#333"
+                                    AutoSize="TextChanges"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Precio" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Entry Text="{Binding Precio}" 
+                                   Placeholder="Ingrese el precio"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#333"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Label Text="Stock" 
+                               FontSize="14"
+                               TextColor="#666"/>
+                        <Frame BackgroundColor="#FFF" 
+                               CornerRadius="5" 
+                               HasShadow="True" 
+                               Padding="5" 
+                               Margin="0,5,0,0">
+                            <Entry Text="{Binding Stock}" 
+                                   Placeholder="Ingrese la cantidad de stock"
+                                   FontSize="16"
+                                   BackgroundColor="Transparent"
+                                   TextColor="#333"/>
+                        </Frame>
+                    </StackLayout>
+
+                    <StackLayout>
+                        <Image Source="{Binding ImagenPreview}" 
+                               WidthRequest="150" 
+                               HeightRequest="150" 
+                               Aspect="AspectFit" 
+                               Margin="0,10"/>
+                        <Button Text="Seleccionar Imagen"
+                                Command="{Binding SeleccionarImagenCommand}"
+                                BackgroundColor="#4CAF50"
+                                TextColor="White"
+                                CornerRadius="10"
+                                Padding="10"/>
+                    </StackLayout>
+
+                    <Button Text="Agregar Producto"
+                            Command="{Binding AgregarCommand}"
+                            FontSize="16"
+                            HeightRequest="50"
+                            BackgroundColor="#FF0000"
+                            TextColor="White"
+                            CornerRadius="10"
+                            HorizontalOptions="FillAndExpand"
+                            VerticalOptions="End"
+                            Margin="0,10,0,0"/>
+
+                </VerticalStackLayout>
+            </Frame>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

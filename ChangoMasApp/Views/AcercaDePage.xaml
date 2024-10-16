@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ChangoMasApp.ViewModels"
+             x:Class="ChangoMasApp.Views.AcercaDePage"
+             x:DataType="vm:AcercaDeViewModel"
+             Title="Acerca de"
+             BackgroundColor="#F0F4F8">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="30" VerticalOptions="FillAndExpand">
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="10"
+                   HasShadow="True"
+                   Padding="15">
+
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Programmer data"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#FF0000"/>
+
+                    <Label Text="Name: Antonio Paez Vangel"
+                           FontSize="16"
+                           TextColor="#333"/>
+
+                    <HorizontalStackLayout>
+                        <Label Text="E-mail: antoniopaez@gmail.com"
+                               FontSize="16"
+                               TextColor="#333"
+                               VerticalOptions="Center"/>
+                        <Button Text="Send"
+                                BackgroundColor="#FF0000"
+                                TextColor="White"
+                                CornerRadius="10"
+                                HeightRequest="35"
+                                VerticalOptions="Center"
+                                Margin="10,0,0,0"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <Label Text="Phone: +54 123456789"
+                               FontSize="16"
+                               TextColor="#333"
+                               VerticalOptions="Center"/>
+                        <Button Text="Call"
+                                BackgroundColor="#FF0000"
+                                TextColor="White"
+                                CornerRadius="10"
+                                HeightRequest="35"
+                                VerticalOptions="Center"
+                                Margin="10,0,0,0"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Frame BackgroundColor="White"
+                   CornerRadius="10"
+                   HasShadow="True"
+                   Padding="15">
+
+                <VerticalStackLayout Spacing="10">
+                    <Label Text="Programmer data"
+                           FontSize="22"
+                           FontAttributes="Bold"
+                           HorizontalOptions="Center"
+                           TextColor="#FF0000"/>
+
+                    <Label Text="Name: Nicolás Milanese"
+                           FontSize="16"
+                           TextColor="#333"/>
+
+                    <HorizontalStackLayout>
+                        <Label Text="E-mail: nicolas@gmail.com"
+                               FontSize="16"
+                               TextColor="#333"
+                               VerticalOptions="Center"/>
+                        <Button Text="Send"
+                                BackgroundColor="#FF0000"
+                                TextColor="White"
+                                CornerRadius="10"
+                                HeightRequest="35"
+                                VerticalOptions="Center"
+                                Margin="10,0,0,0"/>
+                    </HorizontalStackLayout>
+
+                    <HorizontalStackLayout>
+                        <Label Text="Phone: 2954 287766"
+                               FontSize="16"
+                               TextColor="#333"
+                               VerticalOptions="Center"/>
+                        <Button Text="Call"
+                                BackgroundColor="#FF0000"
+                                TextColor="White"
+                                CornerRadius="10"
+                                HeightRequest="35"
+                                VerticalOptions="Center"
+                                Margin="10,0,0,0"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Button Text="Back"
+                    BackgroundColor="#FF0000"
+                    Command="{Binding GoToBackCommand}"
+                    TextColor="White"
+                    CornerRadius="10"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalOptions="End"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

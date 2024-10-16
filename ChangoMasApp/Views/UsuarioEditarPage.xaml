@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChangoMasApp.Views.UsuarioEditarPage"
+             xmlns:vm="clr-namespace:ChangoMasApp.ViewModels"
+             xmlns:models="clr-namespace:ChangoMasApp.Models"
+             x:DataType="vm:UsuarioEditarViewModel"
+             BackgroundColor="#4CAF50"
+             Title="Editar Usuario">
+
+    <ScrollView>
+        <Grid Padding="20" RowDefinitions="Auto,Auto,*" VerticalOptions="FillAndExpand">
+
+            <Label Text="Editar" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   VerticalOptions="StartAndExpand"
+                   TextColor="#FF0000"
+                   Margin="0,40,0,20"
+                   Grid.Row="0"/>
+
+            <StackLayout Spacing="20" Grid.Row="1">
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Nombre completo" 
+                           FontSize="14"
+                           TextColor="#FFCC00"/>
+                    <Frame BackgroundColor="#FFF" 
+                           CornerRadius="10" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Usuario.NombreCompleto, Mode=TwoWay}" 
+                               Placeholder="Ingrese su nombre"
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" 
+                               Margin="0"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Email" 
+                           FontSize="14"
+                           TextColor="#FFCC00"/>
+                    <Frame BackgroundColor="#FFF" 
+                           CornerRadius="10" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Usuario.Email, Mode=TwoWay}" 
+                               Placeholder="Ingrese su email"
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" 
+                               Margin="0"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Contraseña" 
+                           FontSize="14"
+                           TextColor="#FFCC00"/>
+                    <Frame BackgroundColor="#FFF" 
+                           CornerRadius="10" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Usuario.Contraseña, Mode=TwoWay}" 
+                               Placeholder="Ingrese su contraseña"
+                               IsPassword="True"
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" 
+                               Margin="0"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Provincia" 
+                           FontSize="14"
+                           TextColor="#FFCC00"/>
+                    <Frame BackgroundColor="#FFF" 
+                           CornerRadius="10" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Usuario.Provincia, Mode=TwoWay}" 
+                               Placeholder="Ingrese su provincia"
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" 
+                               Margin="0"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Ciudad" 
+                           FontSize="14"
+                           TextColor="#FFCC00"/>
+                    <Frame BackgroundColor="#FFF" 
+                           CornerRadius="10" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Usuario.Ciudad, Mode=TwoWay}" 
+                               Placeholder="Ingrese su ciudad"
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" 
+                               Margin="0"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Calle" 
+                           FontSize="14"
+                           TextColor="#FFCC00"/>
+                    <Frame BackgroundColor="#FFF" 
+                           CornerRadius="10" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Usuario.Calle, Mode=TwoWay}" 
+                               Placeholder="Ingrese su calle"
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" 
+                               Margin="0"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Código Postal" 
+                           FontSize="14"
+                           TextColor="#FFCC00"/>
+                    <Frame BackgroundColor="#FFF" 
+                           CornerRadius="10" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Usuario.CodigoPostal, Mode=TwoWay}" 
+                               Placeholder="Ingrese su código postal"
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" 
+                               Margin="0"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Número de calle" 
+                           FontSize="14"
+                           TextColor="#FFCC00"/>
+                    <Frame BackgroundColor="#FFF" 
+                           CornerRadius="10" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Usuario.NumeroCalle, Mode=TwoWay}" 
+                               Placeholder="Ingrese su número de calle"
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" 
+                               Margin="0"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Departamento" 
+                           FontSize="14"
+                           TextColor="#FFCC00"/>
+                    <Frame BackgroundColor="#FFF" 
+                           CornerRadius="10" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent">
+                        <Entry Text="{Binding Usuario.Departamento, Mode=TwoWay}" 
+                               Placeholder="Ingrese departamento" 
+                               FontSize="16"
+                               HeightRequest="50"
+                               TextColor="#333"
+                               PlaceholderColor="#999"
+                               BackgroundColor="Transparent" 
+                               Margin="0"/>
+                    </Frame>
+                </StackLayout>
+
+                <StackLayout Orientation="Vertical" Margin="0,10,0,0">
+                    <Label Text="Seleccionar Rol" FontSize="18" TextColor="#FFCC00"/>
+                    <Frame BackgroundColor="#FFF" 
+                           CornerRadius="10" 
+                           Padding="0" 
+                           HasShadow="False" 
+                           BorderColor="Transparent">
+                        <Picker ItemsSource="{Binding Roles}" 
+                                SelectedItem="{Binding RolSeleccionado}" 
+                                HeightRequest="50" 
+                                BackgroundColor="Transparent" 
+                                TextColor="#333" 
+                                Margin="0,5,0,0"
+                                VerticalOptions="Start" />
+                    </Frame>
+                </StackLayout>
+
+                <Button Text="Guardar"
+                        Command="{Binding EditarCommand}"
+                        FontSize="16"
+                        HeightRequest="50"
+                        BackgroundColor="#007ACC"
+                        TextColor="White"
+                        CornerRadius="10"
+                        HorizontalOptions="FillAndExpand"
+                        VerticalOptions="End"
+                        Margin="0,10,0,0"/>
+            </StackLayout>
+        </Grid>
+    </ScrollView>
+</ContentPage>

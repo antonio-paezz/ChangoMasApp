@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ChangoMasApp.ViewModels"
+             xmlns:model="clr-namespace:ChangoMasApp.Models"
+             x:Class="ChangoMasApp.Views.UsuariosPage"
+             x:DataType="vm:UsuariosViewModel"
+             Title="Usuarios"
+             BackgroundColor="#F0F4F8">
+
+    <!-- Grid Principal -->
+    <Grid Padding="10" ColumnDefinitions="*,*" ColumnSpacing="10" RowDefinitions="Auto,Auto,*" RowSpacing="10">
+
+        <!-- Botón "Agregar Usuario" solo para admins -->
+        <Button Text="Agregar Usuario" 
+                Grid.Row="0" Grid.ColumnSpan="2"
+                Margin="0,10" 
+                Command="{Binding GoToAgregarUsuarioCommand}" 
+                IsVisible="{Binding EsAdmin}"
+                BackgroundColor="#FF0000" 
+            TextColor="White" 
+                CornerRadius="10" 
+                FontAttributes="Bold"
+                Padding="10"/>
+
+            <!-- Botón "Volver atrás" -->
+            <Button Text="Volver atrás" 
+                Grid.Row="1" Grid.ColumnSpan="2"
+                Margin="0,10" 
+                Command="{Binding GoToBackCommand}" 
+                BackgroundColor="#4CAF50" 
+                TextColor="White" 
+                CornerRadius="10" 
+                FontAttributes="Bold"
+                Padding="10"/>
+
+                <RefreshView Grid.Row="2" Grid.ColumnSpan="2"
+                     Command="{Binding GetUsuariosCommand}" 
+                     IsRefreshing="{Binding IsRefreshing}">
+
+                    <CollectionView ItemsSource="{Binding Usuarios}"
+                            SelectionMode="Single"
+                            SelectedItem="{Binding UsuarioSeleccionado}"
+                            SelectionChangedCommand="{Binding GoToDetailCommand}">
+
+                        <CollectionView.EmptyView>
+                            <StackLayout Padding="50" 
+                                 VerticalOptions="CenterAndExpand" 
+                                 HorizontalOptions="CenterAndExpand">
+                                <Image Source="not_found.jpg" 
+                               HorizontalOptions="Center" 
+                               VerticalOptions="Center"/>
+                                <Label Text="No se encontraron usuarios" 
+                               FontSize="16" 
+                               HorizontalOptions="Center" 
+                               TextColor="#666" 
+                               Margin="0,10,0,0"/>
+                            </StackLayout>
+                        </CollectionView.EmptyView>
+
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="model:Usuarios">
+                                <Frame Margin="5"
+                               CornerRadius="10"
+                               HasShadow="True"
+                               BackgroundColor="White">
+                                    <Grid ColumnDefinitions=".3*,.7*" 
+                                  Padding="10" 
+                                  ColumnSpacing="10" 
+                                  RowDefinitions="Auto,Auto">
+
+                                        <Label Grid.Column="0" 
+                                       Text="{Binding NombreCompleto}" 
+                                       FontSize="18" 
+                                       FontAttributes="Bold"
+                                       VerticalOptions="Start" 
+                                       TextColor="#333"/>
+
+                                        <Label Grid.Column="1" 
+                                       Text="{Binding Email}" 
+                                       FontSize="18" 
+                                       VerticalOptions="Center" 
+                                       TextColor="#333"/>
+
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+
+                    </CollectionView>
+                </RefreshView>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ChangoMasApp.ViewModels"
+             x:DataType="vm:MainViewModel"
+             Title="{Binding Title}"
+             x:Class="ChangoMasApp.MainPage"
+             BackgroundColor="#4CAF50">
+
+    <ScrollView Margin="20">
+        <VerticalStackLayout Spacing="20">
+
+            <Label Text="MENU DE OPCIONES" 
+                   FontSize="28" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   Margin="0,0,0,20" 
+                   TextColor="#FF0000" 
+                />
+
+                <Grid RowSpacing="15" 
+                  ColumnSpacing="15"
+                  ColumnDefinitions="*,*" 
+                    RowDefinitions="*,*,*,*">
+
+                    <Button Text="Productos" 
+                        HeightRequest="85" 
+                        BackgroundColor="#FFCC00" 
+                        TextColor="White"
+                        CornerRadius="12" 
+                        Padding="10"
+                        FontAttributes="Bold"
+                        Grid.Row="0" 
+                        Grid.Column="0"
+                        Command="{Binding GoToProductoListaCommand}">
+                        <Button.ImageSource>
+                            <FontImageSource Size="28" 
+                                         FontFamily="MaterialDesignIcons" 
+                                         Glyph="&#xe1bd;" />
+                        </Button.ImageSource>
+                    </Button>
+
+                    <Button Text="Usuarios" 
+                        HeightRequest="85" 
+                        BackgroundColor="#FFCC00"
+                        TextColor="White"
+                        CornerRadius="12" 
+                        Padding="10"
+                        FontAttributes="Bold"
+                        Grid.Row="0"
+                        Grid.Column="1" 
+                        Command="{Binding GoToUsuarioListaCommand}">
+                        <Button.ImageSource>
+                            <FontImageSource Size="28" 
+                                         FontFamily="MaterialDesignIcons" 
+                                         Glyph="&#xe7fd;" />
+                        </Button.ImageSource>
+                    </Button>
+
+                    <Button Text="Carrito" 
+                        HeightRequest="85" 
+                        BackgroundColor="#FF0000" 
+                        TextColor="White"
+                        CornerRadius="12" 
+                        Padding="10"
+                        FontAttributes="Bold"
+                        Grid.Row="1"
+                        Grid.Column="0"
+                        Command="{Binding GoToCarritoCommand}">
+                        <Button.ImageSource>
+                            <FontImageSource Size="28" 
+                                         FontFamily="MaterialDesignIcons" 
+                                         Glyph="&#xe7fd;" />
+                        </Button.ImageSource>
+                    </Button>
+
+                    <Button Text="Acerca" 
+                        HeightRequest="85" 
+                        BackgroundColor="#FF0000" 
+                        TextColor="White"
+                        CornerRadius="12" 
+                        Padding="10"
+                        FontAttributes="Bold"
+                        Grid.Row="1"
+                        Grid.Column="1" 
+                        Command="{Binding GoToAcercaCommand}">
+                        <Button.ImageSource>
+                            <FontImageSource Size="28" 
+                                         FontFamily="MaterialDesignIcons" 
+                                         Glyph="&#xe88e;" />
+                        </Button.ImageSource>
+                    </Button>
+
+                    <Button Text="Salir" 
+                        HeightRequest="85" 
+                        BackgroundColor="#424242" 
+                        TextColor="White"
+                        CornerRadius="12" 
+                        Padding="10"
+                        FontAttributes="Bold"
+                        Grid.Row="2" 
+                        Grid.ColumnSpan="2"
+                        Command="{Binding ExitCommand}">
+                        <Button.ImageSource>
+                            <FontImageSource Size="28" 
+                                         FontFamily="MaterialDesignIcons" 
+                                         Glyph="&#xe9ba;" />
+                        </Button.ImageSource>
+                    </Button>
+
+                </Grid>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

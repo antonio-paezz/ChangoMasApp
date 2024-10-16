@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChangoMasApp.Views.UsuarioDetallePage"
+             xmlns:vm="clr-namespace:ChangoMasApp.ViewModels"
+             xmlns:models="clr-namespace:ChangoMasApp.Models"
+             x:DataType="vm:UsuarioDetalleViewModel"
+             Title="{Binding Title}"
+             BackgroundColor="#F0F4F8">
+
+    <ScrollView>
+        <VerticalStackLayout Margin="20" Spacing="20">
+
+            <Button Text="Editar" 
+                Margin="0,5" 
+                Command="{Binding GoToEditarCommand}" 
+                IsVisible="{Binding EsAdmin}"
+                BackgroundColor="#4CAF50"   
+                TextColor="White" 
+                CornerRadius="10" 
+                Padding="10"
+                FontAttributes="Bold"
+                VerticalOptions="Start"/>
+
+                <Button Text="Eliminar" 
+                Margin="0,5" 
+                Command="{Binding GoToEliminarCommand}" 
+                IsVisible="{Binding EsAdmin}"
+                BackgroundColor="#FF0000" 
+                    TextColor="White" 
+                CornerRadius="10" 
+                Padding="10"
+                FontAttributes="Bold"
+                VerticalOptions="Start"/>
+
+                    <Frame BackgroundColor="White" 
+               CornerRadius="10" 
+               HasShadow="True" 
+               Padding="15">
+
+                        <Grid ColumnDefinitions="*,*" 
+                  RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto" 
+                  ColumnSpacing="10" 
+                  RowSpacing="10">
+
+                            <Label Text="Nombre" 
+                       Grid.Column="0" 
+                       Grid.Row="0" 
+                       VerticalOptions="Center" 
+                       FontSize="16" 
+                       TextColor="#333"/>
+                            <Frame BackgroundColor="#F9F9F9" 
+                       CornerRadius="5" 
+                       HasShadow="True" 
+                       Padding="5" 
+                       Grid.Column="1" 
+                       Grid.Row="0">
+                                <Entry Text="{Binding Usuario.NombreCompleto}" 
+                           IsReadOnly="True"
+                           TextColor="#000"/>
+                            </Frame>
+
+                            <Label Text="Email" 
+                       Grid.Column="0" 
+                       Grid.Row="1" 
+                       VerticalOptions="Center" 
+                       FontSize="16" 
+                       TextColor="#333"/>
+                            <Frame BackgroundColor="#F9F9F9" 
+                       CornerRadius="5" 
+                       HasShadow="True" 
+                       Padding="5" 
+                       Grid.Column="1" 
+                       Grid.Row="1">
+                                <Editor Text="{Binding Usuario.Email}" 
+                            MaxLength="1000" 
+                            IsReadOnly="True" 
+                            HeightRequest="100"
+                            TextColor="#000"/>
+                            </Frame>
+
+                            <Label Text="Provincia" 
+                       Grid.Column="0" 
+                       Grid.Row="2" 
+                       VerticalOptions="Center" 
+                       FontSize="16" 
+                       TextColor="#333"/>
+                            <Frame BackgroundColor="#F9F9F9" 
+                       CornerRadius="5" 
+                       HasShadow="True" 
+                       Padding="5" 
+                       Grid.Column="1" 
+                       Grid.Row="2">
+                                <Entry Text="{Binding Usuario.Provincia}" 
+                           IsReadOnly="True"
+                           TextColor="#000"/>
+                            </Frame>
+
+                            <Label Text="Ciudad" 
+                       Grid.Column="0" 
+                       Grid.Row="3" 
+                       VerticalOptions="Center" 
+                       FontSize="16" 
+                       TextColor="#333"/>
+                            <Frame BackgroundColor="#F9F9F9" 
+                       CornerRadius="5" 
+                       HasShadow="True" 
+                       Padding="5" 
+                       Grid.Column="1" 
+                       Grid.Row="3">
+                                <Entry Text="{Binding Usuario.Ciudad}" 
+                           IsReadOnly="True"
+                           TextColor="#000"/>
+                            </Frame>
+
+                            <Label Text="Calle" 
+                       Grid.Column="0" 
+                       Grid.Row="4" 
+                       VerticalOptions="Center" 
+                       FontSize="16" 
+                       TextColor="#333"/>
+                            <Frame BackgroundColor="#F9F9F9" 
+                       CornerRadius="5" 
+                       HasShadow="True" 
+                       Padding="5" 
+                       Grid.Column="1" 
+                       Grid.Row="4">
+                                <Entry Text="{Binding Usuario.Calle}" 
+                           IsReadOnly="True"
+                           TextColor="#000"/>
+                            </Frame>
+
+                            <Label Text="Codigo Postal" 
+                       Grid.Column="0" 
+                       Grid.Row="5" 
+                       VerticalOptions="Center" 
+                       FontSize="16" 
+                       TextColor="#333"/>
+                            <Frame BackgroundColor="#F9F9F9" 
+                       CornerRadius="5" 
+                       HasShadow="True" 
+                       Padding="5" 
+                       Grid.Column="1" 
+                       Grid.Row="5">
+                                <Entry Text="{Binding Usuario.CodigoPostal}" 
+                           IsReadOnly="True"
+                           TextColor="#000"/>
+                            </Frame>
+
+                            <Label Text="Numero de Calle" 
+                       Grid.Column="0" 
+                       Grid.Row="6" 
+                       VerticalOptions="Center" 
+                       FontSize="16" 
+                       TextColor="#333"/>
+                            <Frame BackgroundColor="#F9F9F9" 
+                       CornerRadius="5" 
+                       HasShadow="True" 
+                       Padding="5" 
+                       Grid.Column="1" 
+                       Grid.Row="6">
+                                <Entry Text="{Binding Usuario.NumeroCalle}" 
+                       IsReadOnly="True"
+                       TextColor="#000"/>
+                            </Frame>
+
+                            <Label Text="Departamento" 
+                       Grid.Column="0" 
+                       Grid.Row="7" 
+                       VerticalOptions="Center" 
+                       FontSize="16" 
+                       TextColor="#333"/>
+                            <Frame BackgroundColor="#F9F9F9" 
+                       CornerRadius="5" 
+                       HasShadow="True" 
+                       Padding="5" 
+                       Grid.Column="1" 
+                       Grid.Row="7">
+                                <Entry Text="{Binding Usuario.Departamento}" 
+                       IsReadOnly="True"
+                       TextColor="#000"/>
+                            </Frame>
+
+                        </Grid>
+                    </Frame>
+
+                    <Button Text="Volver a Lista" 
+                Margin="0,10" 
+                Command="{Binding GoBackCommand}" 
+                BackgroundColor="#007ACC" 
+                TextColor="White" 
+                CornerRadius="10" 
+                Padding="10"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
